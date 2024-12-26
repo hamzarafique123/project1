@@ -1,0 +1,133 @@
+<ion-menu contentId="main-content">
+  <ion-content class="menu">
+    <ion-list class="menu">
+      <ion-list class="container">
+        <ion-list class="item" (click)="showComponent('customer')">
+          Customers
+        </ion-list>
+        <ion-list class="item ion-margin-top" (click)="showComponent('cash')">
+          Cash and Gold Received
+        </ion-list>
+        <ion-list class="item ion-margin-top" (click)="toggleDropdown('invoices')">
+          Invoices
+          <ion-icon
+            [name]="dropdowns.invoices ? 'chevron-down' : 'chevron'"
+            class="icon"
+          ></ion-icon>
+        </ion-list>
+       
+        @if(dropdowns.invoices) {
+          <ion-list class="dropdown">
+            <ion-list class="dropdown-item" (click)="showComponent('sales')">Sales Invoice</ion-list>
+            <ion-list class="item">Purchase Invoice</ion-list>
+          </ion-list>
+        }
+        <ion-list class="item ion-margin-top" (click)="toggleDropdown('reports')">
+          Reports
+          <ion-icon
+            [name]="dropdowns.reports ? 'chevron-down' : 'chevron'"
+            class="icon"
+          ></ion-icon>
+        </ion-list>
+        
+        @if(dropdowns.reports) {
+          <ion-list class="dropdown">
+            <ion-list class="dropdown-item" (click)="showComponent('expense')">Expense</ion-list>
+            <ion-list class="dropdown-item" (click)="showComponent('ledger')">Ledger</ion-list>
+            <ion-list class="dropdown-item">Salary</ion-list>
+            <ion-list class="dropdown-item">Daily Cash</ion-list>
+            <ion-list class="dropdown-item">Profit & Loss</ion-list>
+            <ion-list class="dropdown-item" (click)="showComponent('manufacturereport')">Internal Manufacturing</ion-list>
+          </ion-list>
+        }
+        <ion-list class="item ion-margin-top" (click)="showComponent('manufacture')">
+          Manufacture
+        </ion-list>
+      </ion-list>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-list class="header1"></ion-list>
+    <ion-toolbar class="header2">
+      <ion-buttons slot="end">
+        <ion-menu-button class="menu-button"></ion-menu-button>
+      </ion-buttons>
+      <img src="../../../assets/imgs/Al Baraka Factory Logo 3.png " class="logo">
+    </ion-toolbar>
+    <ion-list class="header3"></ion-list>
+  </ion-header>
+</div>
+
+
+<ion-list class="menu2">
+  <ion-list class="container">
+    <ion-list class="item" (click)="showComponent('customer')">
+      Customers
+    </ion-list>
+    <ion-list class="item ion-margin-top" (click)="showComponent('cash')">
+      Cash and Gold Received
+    </ion-list>
+    <ion-list class="item ion-margin-top" (click)="toggleDropdown('invoices')">
+      Invoices
+      <ion-icon
+        [name]="dropdowns.invoices ? 'chevron-down' : 'chevron'"
+        class="icon"
+      ></ion-icon>
+    </ion-list>
+    @if(dropdowns.invoices) {
+      <ion-list class="dropdown">
+        <ion-list class="dropdown-item" (click)="showComponent('sales')">Sales Invoice</ion-list>
+        <ion-list class="item">Purchase Invoice</ion-list>
+      </ion-list>
+    }
+    <ion-list class="item ion-margin-top" (click)="toggleDropdown('reports')">
+      Reports
+      <ion-icon
+        [name]="dropdowns.reports ? 'chevron-down' : 'chevron'"
+        class="icon"
+      ></ion-icon>
+    </ion-list>
+    @if(dropdowns.reports) {
+      <ion-list class="dropdown">
+        <ion-list class="dropdown-item" (click)="showComponent('expense')">Expense</ion-list>
+        <ion-list class="dropdown-item" (click)="showComponent('ledger')">Ledger</ion-list>
+        <ion-list class="dropdown-item">Salary</ion-list>
+        <ion-list class="dropdown-item">Daily Cash</ion-list>
+        <ion-list class="dropdown-item">Profit & Loss</ion-list>
+        <ion-list class="item" (click)="showComponent('manufacturereport')">Internal Manufacturing</ion-list>
+      </ion-list>
+    }
+    <ion-list class="item ion-margin-top" (click)="showComponent('manufacture')">
+      Manufacture
+    </ion-list>
+  </ion-list>
+</ion-list>
+
+
+<ion-list class="pages">
+  @if (activeComponent === 'customer') {
+    <app-customer></app-customer>
+  }
+  @if (activeComponent === 'cash') {
+    <app-cash></app-cash>
+  }
+  @if (activeComponent === 'sales') {
+    <app-sales></app-sales>
+  }
+  @if (activeComponent === 'expense') {
+    <app-expense></app-expense>
+  }
+  @if (activeComponent === 'manufacture') {
+    <app-manufacture></app-manufacture>
+  }
+  @if (activeComponent === 'manufacturereport') {
+    <app-manufacturereport></app-manufacturereport>
+  }
+  @if (activeComponent === 'ledger') {
+    <app-ledger></app-ledger>
+  }
+</ion-list>

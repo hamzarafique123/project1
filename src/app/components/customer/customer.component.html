@@ -1,0 +1,83 @@
+<ion-row>
+  <ion-col class="name" size-md="5" size="4">
+    Customers
+  </ion-col>
+  <ion-col size="4" size-md="5">
+    <ion-searchbar color="light" (ionInput)="onSearch($event)"></ion-searchbar>
+  </ion-col>
+  <ion-col size="4" size-md="2" class="ion-text-end">
+    <ion-chip class="add" (click)="openModal()">
+      <ion-icon name="person-add-outline" class="icon"></ion-icon>
+      <ion-label>Add New Customer</ion-label>
+    </ion-chip>
+  </ion-col>
+</ion-row>
+
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Customer Name</th>
+        <th>Shop Name</th>
+        <th>Mobile No.</th>
+        <th>Tax No.</th>
+        <th>Address</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (customer of filteredCustomers; track $index) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ customer.customername }}</td>
+          <td>{{ customer.shopname }}</td>
+          <td>{{ customer.mobile }}</td>
+          <td>{{ customer.tax }}</td>
+          <td>{{ customer.address }}</td>
+          <td>{{ customer.city }}</td>
+          <td class="action-buttons">
+            <ion-icon name="trash-outline" class="icon delete-icon" (click)="deleteCustomer($index)"></ion-icon>
+            <ion-icon name="create" class="icon edit-icon" (click)="editCustomer(customer, $index)"></ion-icon>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+
+<ion-modal [isOpen]="isModalOpen" (ionModalDidDismiss)="closeModal()">
+  <ng-template>
+     <div class="modal-overlay">
+      <div class="modal-content">
+        <ion-icon name="close" class="close-icon" (click)="closeModal()"></ion-icon>
+        <form [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+          <label>Sr. No.</label>
+          <input type="text" [value]="selectedIndex !== null ? selectedIndex + 1 : ''" disabled />
+  
+          <label>Customer Name</label>
+          <input formControlName="customername" type="text" required />
+  
+          <label>Shop Name</label>
+          <input formControlName="shopname" type="text" required />
+  
+          <label>Mobile No.</label>
+          <input formControlName="mobile" type="text" required />
+  
+          <label>Tax No.</label>
+          <input formControlName="tax" type="text" required />
+  
+          <label>Address</label>
+          <input formControlName="address" type="text" required />
+  
+          <label>City</label>
+          <input formControlName="city" type="text" required />
+  
+          <button type="submit" class="save-btn">Save</button>
+        </form>
+      </div>
+    </div>
+  </ng-template>
+</ion-modal>

@@ -1,0 +1,14 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-button color="success" (click)="openModal()">Open Modal</ion-button>
+    <app-modal
+      [isModalOpen]="isModalOpen"
+      (modalClose)="closeModal()"
+    ></app-modal>
+  </ion-content>
+  

@@ -1,0 +1,48 @@
+.header {
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 15px;
+    margin-inline-start: 8px;
+  }
+
+  .text2 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .input {
+    margin-top: 10px;
+    width: 170px;
+    height: 30px;
+    border: 1px solid #8E8A8A;
+  }
+
+  .text {
+    font-size: 14px;
+    font-weight: 600;
+    word-wrap: break-word;
+    white-space: normal;   
+  }
+  .row{
+    border-bottom: solid 1px ;
+    padding-bottom: 15px;
+    width: 98%;
+  }
+
+  .addmore {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-inline-start: 8px;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+
+  ion-button {
+    background: #01274A;
+    width: 350px;
+    height: 52px;
+    border-radius: 10px;
+    font-size: 16px;
+  }

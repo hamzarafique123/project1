@@ -1,0 +1,31 @@
+<ion-list class="header">Internal Manufacturing Report</ion-list>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Gold Sale</th>
+        <th>Gold Received</th>
+        <th>Total Dues</th>
+      </tr>
+    </thead>
+   <tbody>
+    @for(report of reportdata;track report)
+    {
+
+      <tr >
+        <td><ion-input type="date"></ion-input></td>
+        <td>{{ report.sale }}</td>
+        <td>{{ report.received }}</td>
+        <td>{{ report.dues }}</td>
+      </tr>
+    }
+   </tbody>
+    <tfoot>
+      <tr class="total-row">
+        <td class="td1">Total</td>
+        <td>{{totalSale}}</td>
+        <td>{{totalReceived}}</td>
+        <td>{{totalDues}}</td>
+      </tr>
+    </tfoot>
+  </table>

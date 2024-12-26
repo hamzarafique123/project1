@@ -1,0 +1,151 @@
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  padding-top: 20px;
+}
+
+ion-searchbar {
+  --border-radius: 5px;
+}
+
+.icon {
+  font-size: 18px;
+  float: inline-end;
+  margin-inline-end: 5px;
+  font-weight: 500;
+  color: white;
+}
+
+.add {
+  border-radius: 10px;
+  background-color: #01274A;
+  text-align: center;
+  color: white;
+  height: 50px;
+  font-size: 13px;
+}
+
+
+.table-container {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  overflow-x: scroll;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th, .table-container td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table-container .action-buttons {
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.table-container .action-buttons .icon {
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  cursor: pointer;
+  color: #555;
+}
+
+.table-container .action-buttons .icon:hover {
+  background-color: #f0f0f0;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.table-container .action-buttons .edit-icon {
+  color: black; 
+}
+
+.table-container .action-buttons .delete-icon {
+  color: black;
+}
+
+
+.label{
+  padding-left: 40px;
+}
+
+ .save-btn {
+  background-color: #001f3f;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.modal-overlay .close-icon {
+  float: inline-end;
+  font-size: 30px;
+  cursor: pointer;
+}
+ion-modal{
+  --border-radius: 15px;
+  --width: 500px;
+  --height:650px;
+  overflow-y: auto;
+  text-align: center;
+}
+ion-modal::part(backdrop){
+  
+  backdrop-filter: blur(10px); 
+  background: rgba(217, 217, 217, 0.25); 
+  --backdrop-opacity: var(--ion-backdrop-opacity, 0.9);
+}
+
+.modal-overlay {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.modal-overlay .modal-content {
+  border-radius: 10px;
+  width: 400px;
+}
+
+.modal-overlay form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-overlay label {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.modal-overlay input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-overlay .save-btn {
+  background-color: #001f3f;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
